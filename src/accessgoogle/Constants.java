@@ -1,7 +1,7 @@
 package accessgoogle;
 
 public class Constants {
-	 
+	 	//4.google server confirm account selected
 		  public static String GOOGLE_CLIENT_ID = "113725480180-gmu5ih7b05rhdo6d3bo9sfif0valf0n3.apps.googleusercontent.com";
 		  public static String GOOGLE_CLIENT_SECRET = "pSekKt1HcSFeSID1oN_ANFM5";
 		  public static String GOOGLE_REDIRECT_URI = "http://localhost:8080/CNPM/login-google";

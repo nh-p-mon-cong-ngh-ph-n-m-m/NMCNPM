@@ -87,6 +87,9 @@ String error = "";
 											data-size="medium" data-button-type="login_with"
 											data-show-faces="true" data-auto-logout-link="true"
 											data-use-continue-as="true"></div>
+										<!--1.Click on Login with Google-->
+										<!--2.Open Oauth 2.0 dialog-->
+										<!--3.Select account google-->
 										<div class="btn white darken-4 col s10 m4">
 											<a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/CNPM/login-google&response_type=code
 												&client_id=113725480180-gmu5ih7b05rhdo6d3bo9sfif0valf0n3.apps.googleusercontent.com&approval_prompt=force" style="text-transform: none">

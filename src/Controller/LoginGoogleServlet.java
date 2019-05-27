@@ -27,16 +27,22 @@ public class LoginGoogleServlet extends HttpServlet {
 			response.setCharacterEncoding("utf-8");
 			 
 				HttpSession session = request.getSession();
+				//5. Return code
 			    String code = request.getParameter("code");
 			    if (code == null || code.isEmpty()) {
 			      RequestDispatcher dis = request.getRequestDispatcher("Login.jsp");
 			      dis.forward(request, response);
 			    } else {
+			    //6.1 GetToken(code)
+			    //6.3 Return accesstoken
 			      String accessToken = GoogleUtils.getToken(code);
+			    //6.6 Return userInfo
+			    //7. Create account to login
 			      GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
 			      session.setAttribute("account", googlePojo);
 			      String type = "google";
 			      session.setAttribute("type", type);
+			    //8. Result
 			      RequestDispatcher dis = request.getRequestDispatcher("Result.jsp");
 			      dis.forward(request, response);
 			    }
