@@ -149,6 +149,7 @@ swal("Đăng nhập thành công!", "Bạn đã đăng nhập bằng <%=typ
 	</form>
     </div>
   </div>
+  </div>
 <% }}%>
 </body>
 </html>
