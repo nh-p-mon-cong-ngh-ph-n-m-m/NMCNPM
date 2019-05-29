@@ -2,6 +2,7 @@
 <%@page import="rest_fb.Get_User_Details"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<--! 3.8 và 3.13 : Thông báo đăng nhập thành công và hiển thị tên người dùng -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
