@@ -6,7 +6,7 @@ import com.restfb.Version;
 import com.restfb.types.User;
 
 public class Get_User_Details {
-
+	// 3.7 và 3.12 : Lấy thông tin người dùng
 	public User_Profile Get_Profile_info(String accesstoken) {
 		
 		User_Profile obj_User_Profile=new User_Profile();
