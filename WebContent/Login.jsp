@@ -87,7 +87,7 @@
 							</div>
 							<div class="logn-bot">
 								<center>
-									<!-- 2. Bấm nút Login by Facebook -->
+									<!-- 3.1. Bấm nút Login by Facebook -->
 									<fb:login-button scope="public_profile,email"
 										onlogin="checkLoginState();">
 									</fb:login-button>
@@ -127,15 +127,15 @@
 
 	<!-- end main js -->
 	<script>
-		// 4. Kiểm tra trạng thái đăng nhập
+		// 3.3 Kiểm tra trạng thái đăng nhập
 		function statusChangeCallback(response) {
 			console.log('statusChangeCallback');
 			console.log(response);
 			console.log(response.authResponse.accessToken);
 			alert(response.authResponse.accessToken);
-			// 4.1. Đã đăng nhập thì chuyển đến trang thông báo đăng nhập thành công
+			// 3.5.1. Đã đăng nhập thì chuyển đến trang thông báo đăng nhập thành công
 			if (response.status === 'connected') {
-
+				// 3.6 và 3.11 chuyển đến trang thông báo đăng nhập thành công
 				window.location.href = 'Sign_in_Controller.jsp?access_token='
 						+ response.authResponse.accessToken;
 
@@ -150,7 +150,7 @@
 				statusChangeCallback(response);
 			});
 		}
-		// 3. Facebook xác thực ID ứng dụng và sau đó chuyển đến trang đăng nhập
+		// 3.2 Facebook xác thực ID ứng dụng và sau đó chuyển đến trang đăng nhập
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId : '381800275752969',
