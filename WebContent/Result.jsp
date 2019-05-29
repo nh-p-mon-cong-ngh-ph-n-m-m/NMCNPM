@@ -1,5 +1,5 @@
- 
-<%@page import="accessgoogle.GooglePojo"%>
+<%@page import="Model.Account"%>
+<%@page import="Model.GooglePojo"%>
 <%@ page import="java.io.*,java.util.*, javax.servlet.*"%>
 <%@ page import = "javax.servlet.*,java.text.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -126,11 +126,6 @@ img {
 				pic = google.getPicture();	
 					
 	%>
-	<script>
-swal("Đăng nhập thành công!", "Bạn đã đăng nhập bằng <%=type%>", "success");
-</script>
-	<% }if(type =="google"){
-		%>
 	<div class="container">
   <div class="card">
      <div class="card__image-container">
@@ -149,7 +144,61 @@ swal("Đăng nhập thành công!", "Bạn đã đăng nhập bằng <%=typ
 	</form>
     </div>
   </div>
+  <% }if(type =="facebook"){
+		Account facebook = (Account) session.getAttribute("account");
+		name = facebook.getUsername();
+	%>	 
+		<div class="container">
+  <div class="card">
+     <div class="card__image-container">
+       <img class="card__image" src="<%=pic%>" alt="anh dai dien">
+    </div> 
+      <svg class="card__svg" viewBox="0 0 800 500">
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+      </svg>
+    
+     <div class="card__content">
+       <h1 class="card__title"><%=name%></q></h1>
+     <p>You login with <%=type%></q> </p>
+     <form action="login-google" method="post">
+   			<input type="submit" class="btn btn-outline-info" value="Đăng Xuất"/>
+	</form>
+    </div>
   </div>
-<% }}%>
+	<% }if(type =="account"){
+		Account account = (Account) session.getAttribute("account");
+		name = account.getUsername();
+		
+	%>	 
+		<div class="container">
+  <div class="card">
+     <div class="card__image-container">
+       <img class="card__image" src="<%=pic%>" alt="anh dai dien">
+    </div> 
+      <svg class="card__svg" viewBox="0 0 800 500">
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
+        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
+      </svg>
+    
+     <div class="card__content">
+       <h1 class="card__title"><%=name%></q></h1>
+       <%if(session.getAttribute("admin")!=null){
+       %>
+       <h1 class="card__title" style="display: inline-block;"><%=session.getAttribute("admin")%></q></h1>
+       <%} %>
+     <p>You login with <%=type%></q> </p>
+     <form action="login-google" method="post">
+   			<input type="submit" class="btn btn-outline-info" value="Đăng Xuất"/>
+	</form>
+    </div>
+  </div>
+	<% }}%>
+	
+	%>
+</div>
 </body>
+<script type="text/javascript">
+//swal("Đăng nhập thành công!", "Bạn đã đăng nhập bằng Google+!", "success");
+</script>
 </html>
