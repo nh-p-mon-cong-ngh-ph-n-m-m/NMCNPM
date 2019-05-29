@@ -47,35 +47,33 @@ public class LoginServlet extends HttpServlet {
 
 		String url = "/Login.jsp";
 
-		try {
+//		try {
 			if (taiKhoanDAO.checkLogin(usernamex, passwordx) == true) { 
 				HttpSession session = request.getSession();
 				Account account = new Account(usernamex,passwordx);
 				session.setAttribute("account", account);
 				String type = "account";
 				session.setAttribute("type", type);
-				//session.setAttribute("usernamex", usernamex);
+				
 			} else {
-				//url = "/dangnhap.jsp";
+				
 			}
-			//RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-			//rd.forward(request, response);
 			RequestDispatcher dis = request.getRequestDispatcher("Result.jsp");
 		    dis.forward(request, response);
-		} catch (
-
-		Exception e) {
-			e.printStackTrace();
-		}
+//		} catch (
+//
+//		Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getParameter("enter").equals("logout")) {
-			HttpSession session = request.getSession();
-			session.invalidate();
+//		if (request.getParameter("enter").equals("logout")) {
+//			HttpSession session = request.getSession();
+//			session.invalidate();
 			response.sendRedirect("/CNPM/Login.jsp");
-		}
+//		}
 
 	}
 
