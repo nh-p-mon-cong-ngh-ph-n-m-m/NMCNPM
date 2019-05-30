@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 
 		String error = "";
 
+		//kiem tra user name va password ma user nhap vao ,neu sai thi hien thong bao 
 		if (usernamex.equals("") || passwordx.equals("")) {
 			error = "vui lòng nhập đầy đủ thông tin !";
 
@@ -48,6 +49,7 @@ public class LoginServlet extends HttpServlet {
 		String url = "/Login.jsp";
 
 //		try {
+		// neu dung thi chuyen sang trang result 
 			if (taiKhoanDAO.checkLogin(usernamex, passwordx) == true) { 
 				HttpSession session = request.getSession();
 				Account account = new Account(usernamex,passwordx);
