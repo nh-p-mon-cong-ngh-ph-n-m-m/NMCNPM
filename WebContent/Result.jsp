@@ -1,5 +1,5 @@
 <%@page import="Model.Account"%>
-<%@page import="Model.GooglePojo"%>
+<%@page import="accessgoogle.GooglePojo"%>
 <%@ page import="java.io.*,java.util.*, javax.servlet.*"%>
 <%@ page import = "javax.servlet.*,java.text.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
