@@ -1,7 +1,7 @@
 ﻿<%@page import="DAO.AccountDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<!-- 1. Hiển thị trang đăng nhập -->
+<!-- 1. Hiển thị trang đăng nhập -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -87,10 +87,13 @@
 							</div>
 							<div class="logn-bot">
 								<center>
-									<!-- 3.1. Bấm nút Login by Facebook -->
+									<!-- 2. Bấm nút Login by Facebook -->
 									<fb:login-button scope="public_profile,email"
 										onlogin="checkLoginState();">
 									</fb:login-button>
+									<!-- 1. Bấm nút Login with google -->
+									<!-- 2. Open Oauth 2.0 dialog -->
+									<!-- 3. Select account google-->
 									<div class="btn white darken-4 col s10 m4">
 										<a
 											href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/CNPM/login-google&response_type=code
@@ -127,15 +130,15 @@
 
 	<!-- end main js -->
 	<script>
-		// 3.3 Kiểm tra trạng thái đăng nhập
+		// 4. Kiểm tra trạng thái đăng nhập
 		function statusChangeCallback(response) {
 			console.log('statusChangeCallback');
 			console.log(response);
 			console.log(response.authResponse.accessToken);
 			alert(response.authResponse.accessToken);
-			// 3.5.1. Đã đăng nhập thì chuyển đến trang thông báo đăng nhập thành công
+			// 4.1. Đã đăng nhập thì chuyển đến trang thông báo đăng nhập thành công
 			if (response.status === 'connected') {
-				// 3.6 và 3.11 chuyển đến trang thông báo đăng nhập thành công
+
 				window.location.href = 'Sign_in_Controller.jsp?access_token='
 						+ response.authResponse.accessToken;
 
@@ -150,7 +153,7 @@
 				statusChangeCallback(response);
 			});
 		}
-		// 3.2 Facebook xác thực ID ứng dụng và sau đó chuyển đến trang đăng nhập
+		// 3. Facebook xác thực ID ứng dụng và sau đó chuyển đến trang đăng nhập
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId : '381800275752969',
